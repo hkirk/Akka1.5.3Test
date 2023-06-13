@@ -16,3 +16,7 @@ let system = System.create "NewSystem" (Configuration.load())
 let actor = spawn system "Actor" (actorOf helloActor)
 
 actor <! "hello"
+
+system.WhenTerminated.Wait () |> ignore
+
+0
